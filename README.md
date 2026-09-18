@@ -3,11 +3,11 @@
 
 ## Overview
 
-These are utility cogs explicitly intended for SS13 servers leveraging off of the [/tg/](https://github.com/tgstation/tgstation) and [BeeStation](https://github.com/beestation/beestation-hornet) codebases. The idea is to provide a clean and convenient way to push data from the game to discord all while enjoying the many other benefits of having a [Red Bot V3 instance](https://github.com/Cog-Creators/Red-DiscordBot/tree/V3/develop). These cogs may work for other codebases, however, this has not been tested and it may require some added effort during setup.
+These are utility cogs explicitly intended for SS13 servers leveraging off of the [/tg/](https://github.com/tgstation/tgstation) and [OculisStation](https://github.com/OculisStation/OculisStation) codebases. The idea is to provide a clean and convenient way to push data from the game to discord all while enjoying the many other benefits of having a [Red Bot V3 instance](https://github.com/Cog-Creators/Red-DiscordBot/tree/V3/develop). These cogs may work for other codebases, however, this has not been tested and it may require some added effort during setup.
 
 | Cog                     | Description                                                  |
 | ----------------------- | ------------------------------------------------------------ |
-| [GetNotes](#GetNotes)   | **Pulls player notes from an SS13 [BeeStation](https://github.com/BeeStation/BeeStation-Hornet/blob/master/SQL) schemed database**<br /><br />`setnotes` - Configuration options for the notes cog<br />`notes` -  Lists all of the notes for a given CKEY<br />`findplayer` - Searches the database for a player using their CID, IP, or CKEY and outputs an overview of the user. **Note**: It is recommended to restrict this command to admin specific channels. The results will automatically redact the CID and IP after 5-minutes. <br />`playerinfo` \| `ckey` - Player friendly version of the `findplayer` command providing basic user info without providing sensitive information like the CID or IP.<br />`alts` - Searches for possible alt accounts by comparing entries in the `connection_log` table. **Note**: This command can take a long time to complete<br /><br />*Requires: aiomysql>=0.0.20 -- `pip install aiomysql`* |
+| [GetNotes](#GetNotes)   | **Pulls player notes from an SS13 [TGStation](https://github.com/tgstation/tgstation/tree/master/SQL) schemed database**<br /><br />`setnotes` - Configuration options for the notes cog<br />`notes` -  Lists all of the notes for a given CKEY<br />`findplayer` - Searches the database for a player using their CID, IP, or CKEY and outputs an overview of the user. **Note**: It is recommended to restrict this command to admin specific channels. The results will automatically redact the CID and IP after 5-minutes. <br />`playerinfo` \| `ckey` - Player friendly version of the `findplayer` command providing basic user info without providing sensitive information like the CID or IP.<br />`alts` - Searches for possible alt accounts by comparing entries in the `connection_log` table. **Note**: This command can take a long time to complete<br /><br />*Requires: aiomysql>=0.0.20 -- `pip install aiomysql`* |
 | [Status](#Status)       | **Obtains the current status of a hosted SS13 round and pertinent admin pings (e.g. Ahelps, round ending events, custom pings)**<br /><br />`adminwho` - Lists the current admins on the server &ast;<br />`players` - Lists the current players on the server&ast;<br />`setstatus`  - Configuration options for the status cog<br />`status` - Displays current round information<br /><br />_&ast; Requires additional setup, see [Additional Functions](#additional-functions) for more information_ |
 | [CCLookup](#CCLookup)   | **Checks the shared CentCom database for information on a given ckey**<br /><br />`centcom` - Lists bans for a provided ckey<br />`ccservers` - Lists servers currently contributing to the shared ban database<br /><br />*Requires: httpx>=0.14.1 -- `pip install httpx`* |
 | [DMCompile](#DMCompile) | **Compiles and runs DM code**<br /><br />`setcompile` - DM Compiler settings<br />`listbyond` - Lists the available BYOND versions you can compile with<br />`compile` - Sends formatted code to a compilation environment and returns the results\*<br /><br />Requires: httpx>=0.14.1 -- `pip install httpx`<br /><br />_* Requires additional setup, see [DMCompile](#DMCompile) for more information_ |
@@ -28,8 +28,6 @@ _Any reference to [p] should be replaced with your prefix_
 ---
 
 ### GetNotes:
-
-In order to fully utilize the GetNotes cog you will need to have a fully configured player database for your SS13 server configured using the [BeeStation schema](https://github.com/BeeStation/BeeStation-Hornet/blob/master/SQL/beestation_schema.sql). 
 
 Once you have a database configured, you will need to provide a user that the bot can use to query said database. It is **highly** recommended that you ensure this user only has `SELECT` privileges and is separate from the one your server is configured to use. 
 
@@ -227,14 +225,9 @@ Basic code can be compiled without defining a primary proc, however, advanced fu
 
 ---
 
-### Contact:
-
-For questions or concerns, feel free to submit a new [issue](https://github.com/crossedfall/crossed-cogs/issues). I will make my best effort to address any concerns/feedback provided within a reasonable amount of time.
-
-
-
 ### Credits:
 
+- [Crossedfall](https://github.com/OculisStation/oculis-cogs/commits?author=Crossedfall) for the actual repo!
 - [Tigercat2000](https://github.com/tigercat2000) for his subsystem template
 - The [/TG/ community](https://github.com/tgstation) for their efforts on SS13 
 - The [Cog-Creators](https://github.com/Cog-Creators) staff for their work on redbot
