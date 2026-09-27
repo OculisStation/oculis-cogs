@@ -21,4 +21,3 @@ class Say(commands.Cog):
         Makes the bot say something.
         """
         await interaction.response.send_message(f"{text}", ephemeral=True)
-    
