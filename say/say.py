@@ -2,7 +2,7 @@
 import discord
 
 #Redbot Imports
-from redbot.core import commands, checks
+from redbot.core import commands, checks, app_commands
 
 __version__ = "1.0.0"
 __author__ = "XeonMations"
