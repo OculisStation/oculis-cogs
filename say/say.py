@@ -14,14 +14,11 @@ class Say(commands.Cog):
         self.bot = bot
 
     @commands.guild_only()
-    @commands.command()
+    @app_commands.command()
     @checks.admin_or_permissions(administrator=True)
-    async def say(self, ctx, text: str):
+    async def say(self, interaction: discord.Interaction, text: str):
         """
         Makes the bot say something.
         """
-        try:
-            await ctx.send(f"{text}")
-        except (ValueError, KeyError, AttributeError):
-            await ctx.send("There was an error! Please ask Xeon to fix this.")
+        await interaction.response.send_message(f"{text}", ephemeral=True)
     
