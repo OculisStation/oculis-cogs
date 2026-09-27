@@ -16,9 +16,9 @@ class Say(commands.Cog):
     @commands.guild_only()
     @app_commands.command()
     @checks.admin_or_permissions(administrator=True)
-    async def say(self, ctx, interaction: discord.Interaction, text: str):
+    async def say(self, interaction: discord.Interaction, text: str):
         """
         Makes the bot say something.
         """
-        await ctx.send(f"{text}")
+        await interaction.channel.send(f"{text}")
 
