@@ -1,0 +1,11 @@
+{
+    "author": ["XeonMations"],
+    "install_msg": "Say command succesfully created.",
+    "name": "Bot Say",
+    "short": "Makes the bot say something.",
+    "description": "Self explanatory.",
+    "permissions" : [],
+    "tags": [
+        "Utility"
+    ]
+}
