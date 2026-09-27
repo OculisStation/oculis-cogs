@@ -14,7 +14,7 @@ class Say(commands.Cog):
         self.bot = bot
 
     @commands.guild_only()
-    @commands.group()
+    @commands.command()
     @checks.admin_or_permissions(administrator=True)
     async def say(self, ctx, text: str):
         """
