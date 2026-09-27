@@ -20,5 +20,5 @@ class Say(commands.Cog):
         """
         Makes the bot say something.
         """
-        await interaction.channel.send(f"{text}")
+        interaction.channel.send(f"{text}")
 
