@@ -20,6 +20,6 @@ class Say(commands.Cog):
         """
         Makes the bot say something.
         """
-        await interaction.response.defer()
+        await interaction.response.send_message(delete_after=1)
         await interaction.channel.send(f"{text}")
 
